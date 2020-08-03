@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "anime-india-285113",
+  "private_key_id": "b6edd11b527264704bead41660247f0920aa3171",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8F9uTBBQOoxKr\nb5eOx2Qm5MV2zg8ER+PtGFQB68QLOT11xrL7JaKpATLFfZ8wr+zT1kA1dDDP1Xj6\nqoag9M8Ns+hmKSFWn3GtXaXSgz8KYiIUYlRP12xJ5UdzP2b1+T4TtRXFON0kktSm\nZZc0H8ZNvoBzgBXAaOGZmFAoSEyDBJgwwxFBrsUCAQSMY6xV2F3enudc7dORJHd0\n75zvLWJgMqumHB8thJaOHf0VskaDQFAWy7oi54Vu2uFNijwP58Zibw7rcIgy0/Hq\nxqpyZaVTAZsHIpRnfL8wi79nbpkdPSVRsOOnUT7SGSZafRb4aZ2GtS1nFAmtHe0g\nFjBBxZa1AgMBAAECggEAJCKXOe7CJa+5gfr9zF3NBVXVA8aBhwqCpMWUOgw/zQIx\npwNF1k78KWjEBsHkB9f8cRQLoNlSGVODGvEQzTJK5vCFuL61G22lSq+fkEpLnaSN\ntInRdcdGlAm6yM7I6n94KBQVex66CXE17kO9ITPrhnsPNWFJjH35vWbQG3UMUe0G\neRYWXUVG0BED0eevwGGGlAyk/fBbO7skWnPx/JfJyPigfqonTmqt1t0a1U00KvEz\nN7aoQpakpbqe7aMYIvx9U7urNCvHeLOWIF9Iit/Yl0gTMUMbNNhdYDs0wRs1/Bu2\nf6v9TYUoVf9XNRNE3fiqK7Nz073vu9LK9OWCEarFoQKBgQD6w2d3YwdovKU5P6YB\nmKzK/SjB12QDkCOsaEU5o7Cx1Sp7s6Ccmao+m5f30e/H+yuBB4N7Ue1gFn4JI5lA\nvir4jrHmToDpNw6vOsK+fhJc1Z8etktLiVcABX8AY4q5OyWq1WT4hE+bqJJHutvg\nlzay1IyvGgEH6CMMzmFfX3EpkQKBgQDABWpVSkW4flWlUdq9WiykXYmvf42sGCzC\n1+AmJKqK5EOkHNfCshFWql+t2IOA/8CrIidRJC5OCzmLILhPBIA3Ubsq1SLd7yci\nyUfYWbJcKL8AFfN8otM4vGhBEUpHXt66Oy5YUD9msHjTXv4FyiLCbfg7oDrhSFRL\nTnQrJeDo5QKBgQCz9DyxEXEEubQ8VC/Wn3EJLwnrqZ3NbMgc9qsPBShNRjN5mFuf\nZislSNWS86aGtfnvW6wAeLfHp/yEpHZbXt1JiGWkaBvcwTUZjSqqN6EH3AmXqax5\nJbM4gbk1Vzn7WbXbVc5jBdh3VU68iR03nGyVgzD+i8PHn9BfZU+9eKml8QKBgD6w\nheqaePCmridu9c7j5bczooPdTM9mhRaHi/Jn/hWiOEMX94jkwaxdqycCjMxMswYr\n/FINUeDA4WR+pi2F9qYY1NZDB0MVlN1SgVYs0oIr+0932ypRrkvTluXHU0zBuE1s\njNDgQhKwgoHffWc+euKnLGerBA4QoxSC5IJBt4/RAoGALmSpX8aB4BwEIPSV1sE+\n4CNTKhvR0va8UYMdTnvzQV5DNa6Fk5oBOO4vDEVWGIpqTKM8s7EvloG/Hkadb67Y\nPSGlClEiL6dQkjDhNEubqLDlISIn3z6/HpUy8lKehfFB9tvyl52+mqlumF8TJyFf\nm3Gm3Q8m/1NlHxyeN4GcEXU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "anime-india@anime-india-285113.iam.gserviceaccount.com",
+  "client_id": "102693646544100787688",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/anime-india%40anime-india-285113.iam.gserviceaccount.com"
+}
