@@ -21,6 +21,7 @@ mongoose.connect("mongodb+srv://admin-anime:Dbskalyan@1@cluster0.0ge2u.mongodb.n
 const animeSchema = new mongoose.Schema({
   name: String,
   bannerUrl: String,
+  summary: String,
   status: String,
   dateAired: String,
   episodeList: [
@@ -76,6 +77,7 @@ app.get("/add", function (req, res) {
 app.post("/addAnime", function (req, res) {
   const animeName = req.body.animeName;
   const animeImgUrl = req.body.animeImgUrl;
+  const animeSummary = req.body.animeSummary;
   const animeStatus = req.body.animeStatus;
   const animeDate = req.body.animeDate;
   const animeEpisode = req.body.animeEpisode;
@@ -84,6 +86,7 @@ app.post("/addAnime", function (req, res) {
   const anime = new Anime({
     name: animeName,
     bannerUrl: animeImgUrl,
+    summary: animeSummary,
     status: animeStatus,
     dateAired: animeDate,
     episodeList: [
