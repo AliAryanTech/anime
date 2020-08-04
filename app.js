@@ -16,8 +16,13 @@ mongoose.connect("mongodb+srv://admin-anime:Dbskalyan@1@cluster0.0ge2u.mongodb.n
   useFindAndModify: false,
 });
 
+// ===================== Anime Model ===========================
+
 const animeSchema = new mongoose.Schema({
   name: String,
+  bannerUrl: String,
+  status: String,
+  dateAired: String,
   episodeList: [
     {
       episodeName: String,
@@ -27,6 +32,8 @@ const animeSchema = new mongoose.Schema({
 });
 
 const Anime = mongoose.model("Anime", animeSchema);
+
+// ===================== Get Requests  ===========================
 
 app.get("/", function (req, res) {
   Anime.find({}, function (err, animes) {
@@ -39,66 +46,53 @@ app.get("/", function (req, res) {
 app.get("/anime/:animeId", function (req, res) {
   const requestedAnime = req.params.animeId;
 
-  // console.log(requestedAnime);
-  // console.log(requestedVideo);
-
   Anime.findOne({ _id: requestedAnime }, function (err, anime) {
-    // console.log(anime.episodeList);
-
-    // var i = anime.episodeList.length,
-    //   foundVideo;
-
-    // while (i--) {
-    //   if (requestedVideo == anime.episodeList[i]._id) {
-    //     foundVideo = anime.episodeList[i];
-    //     break;
-    //   }
-    // }
-
-    // for (let index = 0; index < i; index++) {
-    //   if (requestedVideo === anime.episodeList[i]._id) {
-    //     foundVideo = anime.episodeList[i];
-    //     break;
-    //   }
-    // }
-
-    // var foundVideo = anime.episodeList.find(function (episode) {
-    //   return episode._id === requestedVideo;
-    // });
-
-    // console.log(foundVideo);
-    // const foundVideo = anime.episodeList.find(function (matchedVideo) {
-    //   return matchedVideo._id === requestedVideo;
-    // });
-    // console.log("Found Vide0 = " + foundVideo);
-
     res.render("anime", {
       anime: anime,
     });
   });
+});
 
-  app.get("/player/:epId", function (req, res) {
-    const source = req.params.epId;
-    console.log(source);
-    res.render("player", {
-      src: source,
-    });
+app.get("/player/:epId", function (req, res) {
+  const source = req.params.epId;
+  console.log(source);
+  res.render("player", {
+    src: source,
+  });
+});
+
+app.get("/add", function (req, res) {
+  res.render("addPage");
+});
+
+// =========================== POST Requests =========================
+
+app.post("/addAnime", function (req, res) {
+  const animeName = req.body.animeName;
+  const animeImgUrl = req.body.animeImgUrl;
+  const animeStatus = req.body.animeStatus;
+  const animeDate = req.body.animeDate;
+  const animeEpisode = req.body.animeEpisode;
+  const animeLink = req.body.animeLink;
+
+  const anime = new Anime({
+    name: animeName,
+    bannerUrl: animeImgUrl,
+    status: animeStatus,
+    dateAired: animeDate,
+    episodeList: [
+      {
+        episodeName: animeEpisode,
+        episodeLink: animeLink,
+      },
+    ],
   });
 
-  // Anime.find(
-  //   {},
-  //   function (err, animes) {
-  //     animes.forEach(function (anime) {
-  //       const foundVideo = anime.episodeList.find(function (matchedVideo) {
-  //         return matchedVideo._id === requestedVideo;
-  //       });
-  //       console.log(foundVideo);
-  //     });
-  //   },
-  //   function (params) {
-  //     res.render("player");
-  //   }
-  // );
+  anime.save(function (err) {
+    if (!err) {
+      res.redirect("/add");
+    }
+  });
 });
 
 // ==========================Save new Episodes
@@ -123,19 +117,11 @@ app.get("/anime/:animeId", function (req, res) {
 // });
 
 // ==========================Save new anime
-// const anime = new Anime({
-//   name: "GOHS",
-//   episodeList: [{ episodeName: "2", episodeLink: "hydra" }],
-// });
-
-// anime.save(function (err) {
-//   if (!err) {
-//     res.redirect("/home");
-//   }
-// });
 
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port);
+app.listen(port, function () {
+  console.log(`Server started at port ${port}`);
+});

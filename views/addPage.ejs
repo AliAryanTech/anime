@@ -1,0 +1,66 @@
+<%- include('partials/header'); -%>
+<br />
+<br />
+<div class="container-fluid" style="max-width: 30rem;">
+  <form action="addAnime" method="POST">
+    <div class="form-group">
+      <h1>Add A New Anime Title</h1>
+      <label for="exampleInputEmail1">Anime Title</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="animeName" />
+      <small id="emailHelp" class="form-text text-muted">
+        Make sure to add correct name, It cannot be modified later.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Banner Art Url</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="animeImgUrl" />
+      <small id="emailHelp" class="form-text text-muted">
+        Banner art should be in Portrait mode only.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Status</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="animeStatus" />
+      <small id="emailHelp" class="form-text text-muted">
+        Ongoing or Completed
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Date Aired</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="animeDate" />
+      <small id="emailHelp" class="form-text text-muted">
+        For Ongoing Anime : 6 Jul 2020 to ?
+      </small>
+      <small id="emailHelp" class="form-text text-muted">
+        For Completed Anime : 6 Jul 2020 to 26 Oct 2020
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Initial Episode</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="animeEpisode" />
+      <small id="emailHelp" class="form-text text-muted">
+        Enter : Episode 1
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Episode Link</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="animeLink" />
+      <small id="emailHelp" class="form-text text-muted">
+        Enter the Hydrax link tag only.
+      </small>
+      <small id="emailHelp" class="form-text text-muted">
+        For Example : FEERYANGs1
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<br />
+<br />
+
+<%- include('partials/footer'); -%>
