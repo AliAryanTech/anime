@@ -1,0 +1,38 @@
+<%- include('partials/header'); -%>
+<br />
+<br />
+<div class="container-fluid" style="max-width: 30rem;">
+  <form action="addEpisode" method="POST">
+    <h2 style="text-align: center;">Add New Episodes</h2>
+    <br />
+    <div class="form-group">
+      <label for="exampleInputEmail1">Anime Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="animeName" />
+      <small id="emailHelp" class="form-text text-muted">
+        Anime name is case-sensitive.
+      </small>
+      <small id="emailHelp" class="form-text text-muted">
+        It should exactly match the name in Database.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Episode Number</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="episodeNumber" />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Episode Link</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="episodeLink" />
+      <small id="emailHelp" class="form-text text-muted">
+        Enter the Hydrax link tag only.
+      </small>
+      <small id="emailHelp" class="form-text text-muted">
+        For Example : FEERYANGs1
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<br />
+<br />
+
+<%- include('partials/footer'); -%>

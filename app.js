@@ -61,11 +61,17 @@ app.get("/player/:epId", function (req, res) {
   });
 });
 
-app.get("/add", function (req, res) {
+app.get("/new", function (req, res) {
   res.render("addPage");
 });
 
+app.get("/add", function (req, res) {
+  res.render("addEpisode");
+});
+
 // =========================== POST Requests =========================
+
+// == Save new anime ==
 
 app.post("/addAnime", function (req, res) {
   const animeName = req.body.animeName;
@@ -95,28 +101,26 @@ app.post("/addAnime", function (req, res) {
   });
 });
 
-// ==========================Save new Episodes
+// == Save new Episodes ==
 
-// const episodeListNew = {
-//   episodeName: "3",
-//   episodeLink: "hydra3",
-// };
+app.post("/addEpisode", function (req, res) {
+  const animeName = req.body.animeName;
+  const episodeListNew = {
+    episodeName: req.body.episodeNumber,
+    episodeLink: req.body.episodeLink,
+  };
 
-// Anime.findOneAndUpdate(
-//   { name: "GOHS" },
-//   {
-//     $push: { episodeList: episodeListNew },
-//   },
-//   { upsert: true },
-//   function (err, data) {
-//     console.log(err);
-//   }
-// );
-// Anime.findOne({ name: "GOHS" }, function (err, name) {
-//   console.log(name);
-// });
-
-// ==========================Save new anime
+  Anime.findOneAndUpdate(
+    { name: animeName },
+    {
+      $push: { episodeList: episodeListNew },
+    },
+    { upsert: true },
+    function (err, data) {
+      res.redirect("/add");
+    }
+  );
+});
 
 let port = process.env.PORT;
 if (port == null || port == "") {
